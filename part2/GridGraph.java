@@ -184,7 +184,7 @@ public class GridGraph
     }
 
     //--------------------------------------------------------------------------------
-    //D - done 
+    //D - not done 
     ArrayList<GridNode> astar(final GridNode sourceNode, final GridNode destNode){
         ArrayList<GridNode> path = new ArrayList<GridNode>();
         HashMap<GridNode, ArrayList<Integer>> map = new HashMap<>();
