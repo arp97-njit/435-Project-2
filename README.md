@@ -15,19 +15,30 @@ BFT iteratively or recursively
 Part 2-------------------------------------------------------------------
 
 DirectedGraph:
+
   Creates Random DAG graph iteratively
+  
   Does not implement Kahns
+  
   Can do mDFS
   
 
 WeightedGraph:
+
   Creates Random Weighted Graph
+  
   Creates Weighted Linked List Graph
+  
   Dijkstras is NOT fully functioning
+  
     Currently runs infinite loop, there is an unfound bug
     
 GridGraph:
+
   Creates Grid
+  
   Creates Random Grid Graph
+  
   A* is NOT fully functioning
+  
     Currently runs infinite loop, there is an unfound bug
