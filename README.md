@@ -16,29 +16,29 @@ Part 2-------------------------------------------------------------------
 
 DirectedGraph:
 
-  Creates Random DAG graph iteratively
+    Creates Random DAG graph iteratively
   
-  Does not implement Kahns
+    Does not implement Kahns
   
-  Can do mDFS
+    Can do mDFS
   
 
 WeightedGraph:
 
-  Creates Random Weighted Graph
+    Creates Random Weighted Graph
   
-  Creates Weighted Linked List Graph
+    Creates Weighted Linked List Graph
   
-  Dijkstras is NOT fully functioning
+    Dijkstras is NOT fully functioning
   
-    Currently runs infinite loop, there is an unfound bug
+    -----Currently runs infinite loop, there is an unfound bug
     
 GridGraph:
 
-  Creates Grid
+    Creates Grid
   
-  Creates Random Grid Graph
+    Creates Random Grid Graph
   
-  A* is NOT fully functioning
+    A* is NOT fully functioning
   
-    Currently runs infinite loop, there is an unfound bug
+    -----Currently runs infinite loop, there is an unfound bug
