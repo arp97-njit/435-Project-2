@@ -147,7 +147,7 @@ public class WeightedGraph
         return graph;
     }
 
-    //E - not done - not tested
+    //E - not done 
     HashMap<Node, Integer> dijkstras(final Node start){
         HashMap<Node, Integer> fullMap = new HashMap<Node, Integer>();
         int whileBreaker = 0;
