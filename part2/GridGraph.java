@@ -240,7 +240,6 @@ public class GridGraph
         return h;
     }
 
-   
 }
 
 
