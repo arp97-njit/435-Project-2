@@ -1,14 +1,38 @@
 import java.util.*;
 
 class Node {
-    public int data;
-    public List<Node> neighbors;
-    public boolean visited;
+    private int data;
+    private List<Node> neighbors;
+    private boolean visited;
   
     public Node(int data) {
       this.data = data;
-      this.neighbors = new ArrayList<>();
+      this.neighbors = new ArrayList<Node>();
       this.visited = false;
+    }
+
+    public void setData(int data){
+        this.data = data;
+    }
+    
+    public int getData(){
+        return data;
+    }
+
+    public void setNeighbor(Node neighborNode){
+        neighbors.add(neighborNode);
+    }
+
+    public ArrayList<Node> getNeighbor(){
+        return neighbors;
+    }
+
+    public void setVisited(boolean flag){
+        visited = flag;
+    }
+
+    public boolean getVisited(){
+        return visited;
     }
 }
 
@@ -25,7 +49,7 @@ public class DirectedGraph
 
         DirectedGraph testC = graph.createRandomDAGIter(10);
         for(Node v : testC.vertices){  
-            System.out.print(v.data + " ");
+            System.out.print(v.getData() + " ");
         }
 
         //Test D - Kahns not implemented 
@@ -36,7 +60,7 @@ public class DirectedGraph
         topSort ts = new topSort();
         ArrayList<Node> toPrint =  ts.mDFS(testE);
         for(Node v : toPrint){
-            System.out.print(v.data + " ");
+            System.out.print(v.getData() + " ");
         } 
 
     }
@@ -55,13 +79,15 @@ public class DirectedGraph
 
     //B - ii - done
     void addDirectedEdge(final Node first, final Node second) { //adds directed edge between first and second 
-        first.neighbors.add(second);
+        first.setNeighbor(second);
         
     }
 
     //B - iii - done
-    void removeDirectedEdge(final Node first, final Node second){ //removes an directed edge between first and second 
-        first.neighbors.remove(second);
+    void removeDirectedEdge(final Node first, final Node second){ //removes an directed edge between first and second  
+        if(first.getNeighbor().contains(second)){
+            neighborList.remove(second);
+        }
 
     }
 
@@ -84,15 +110,16 @@ public class DirectedGraph
 
         int counter = 0;
         Random rand = new Random();
-        int randNum = rand.nextInt(num * 10);
+        int randNum = 0;
 
         while(counter != num){ //create all random nodes
+            randNum = rand.nextInt(num * 10);
             boolean isInGraph = createGraphHelper(graph, randNum);
+
             if(isInGraph == false){
                 graph.addNode(randNum);
                 counter ++;
             }
-            randNum = rand.nextInt(num * 10);
         }
         
         //make DAG connections
@@ -106,7 +133,7 @@ public class DirectedGraph
 
             while(tempCounter != randNumberOfConnections){
 
-                if(!n.neighbors.contains(graph.vertices.get(randIndex))){   
+                if(!n.getNeighbor().contains(graph.vertices.get(randIndex))){   
                     graph.addDirectedEdge(n, graph.vertices.get(randIndex));
                     tempCounter ++;
                 }
@@ -123,7 +150,7 @@ public class DirectedGraph
 
     boolean createGraphHelper(DirectedGraph g, int randNum){
         for(Node v : g.vertices){
-            if(v.data == randNum){
+            if(v.getData() == randNum){
                 return true;
             }
         }
