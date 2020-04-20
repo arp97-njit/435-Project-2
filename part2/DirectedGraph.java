@@ -182,7 +182,7 @@ class topSort{
         Stack<Node> stack = new Stack<Node>();
 
         for(Node v : graph.vertices){ //go through all nodes in graph
-            if(v.visited == false){
+            if(v.getVisited() == false){
                 mDFSHelper(v, stack);
             }
         }
@@ -195,9 +195,9 @@ class topSort{
     }
 
     void mDFSHelper(Node n, Stack<Node> s){  //does DFS on all neighbors
-        n.visited = true; 
-        for(Node neigh : n.neighbors){
-            if(neigh.visited == false){
+        n.setVisited(true);  
+        for(Node neigh : n.getNeighbor()){
+            if(neigh.getVisited() == false){
                 mDFSHelper(neigh, s);
             }
         }
