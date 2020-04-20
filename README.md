@@ -29,9 +29,8 @@ WeightedGraph:
   
     Creates Weighted Linked List Graph
   
-    Dijkstras is NOT fully functioning
-  
-    -----Currently runs infinite loop, there is an unfound bug
+    Dijkstras is run on a given Node start value from the Graph
+ 
     
 GridGraph:
 
@@ -39,6 +38,5 @@ GridGraph:
   
     Creates Random Grid Graph
   
-    A* is NOT fully functioning
+    A* is run on a start and end Node
   
-    -----Currently runs infinite loop, there is an unfound bug
