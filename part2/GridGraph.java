@@ -170,14 +170,9 @@ public class GridGraph
         Random rand = new Random();
         int rtnVal = rand.nextInt(n*10);
 
-        while(true){
-            if(currVals.contains(rtnVal)){
-                rtnVal = rand.nextInt(n*10);
-                continue;
-            }
-            else{ //found value that isn't already in grid
-                break;
-            }
+        while(currVals.contains(rtnVal)){
+            rtnVal = rand.nextInt(n*10);
+
         }
 
         return rtnVal;
@@ -246,11 +241,6 @@ public class GridGraph
     }
 
    
-
-   
-
-    
-
 }
 
 
